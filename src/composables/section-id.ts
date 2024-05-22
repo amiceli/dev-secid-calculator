@@ -6,11 +6,6 @@ enum UC_CHARACTERS {
   HW_KANAMU = 0xFF91
 }
 
-enum ASCII_CHARACTERS {
-  TILDE = 0x7E,
-  SPACE = 0x20
-}
-
 export type SectionIdData = {
   idValue: ComputedRef<number>,
   idName: ComputedRef<string>
@@ -28,7 +23,7 @@ export function useSectionId(charName: Ref<string> | string, classModifier: Ref<
     const name = toValue(charName)
     const mod = toValue(isBlueBurst) ? toValue(classModifier) : 5
 
-    if (!isStrAscii(name) || name === '' || mod === -1) return -1
+    if (name === '' || mod === -1) return -1
 
     const chars = name.split('')
 
@@ -62,20 +57,6 @@ export function useSectionId(charName: Ref<string> | string, classModifier: Ref<
     const value = toValue(secIdValue)
     return (value === -1) ? '' : SectionIdVal[secIdValue.value].toLowerCase()
   })
-
-  function isStrAscii(str: string): boolean {
-
-    for (let i = 0; i <= str.length; i += 1) {
-
-      let currentChar = str.charCodeAt(i)
-
-      if (currentChar > ASCII_CHARACTERS.TILDE || currentChar < ASCII_CHARACTERS.SPACE) {
-        return false
-      }
-    }
-
-    return true
-  }
 
   return { idValue: secIdValue, idName: secIdName }
 }
