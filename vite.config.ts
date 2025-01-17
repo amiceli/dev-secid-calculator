@@ -1,5 +1,5 @@
-import { defineConfig } from 'vite'
 import autoprefixer from 'autoprefixer'
+import { defineConfig } from 'vite'
 
 import vue from '@vitejs/plugin-vue'
 
@@ -9,9 +9,7 @@ export default defineConfig({
   base: '/secid-calculator',
   css: {
     postcss: {
-      plugins: [
-        autoprefixer()
-      ],
-    }
-  }
+      plugins: [autoprefixer()],
+    },
+  },
 })

@@ -17,7 +17,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { computed, ref } from 'vue'
 import { useSectionId } from '../composables/section-id'
 import ClassSelector from './class-selector.vue'
 
@@ -26,11 +26,11 @@ const charName = ref('')
 const isBlueBurst = ref(true)
 
 const hasClassSelected = computed(() => classModifier.value !== -1)
-const { idName } = useSectionId(charName, classModifier,  isBlueBurst)
+const { idName } = useSectionId(charName, classModifier, isBlueBurst)
 
 const spriteClassName = computed(() => {
   const { value } = idName
-  return (value === '') ? value : `append-badge-${value}-icon`
+  return value === '' ? value : `append-badge-${value}-icon`
 })
 </script>
 

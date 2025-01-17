@@ -21,70 +21,70 @@
 </template>
 
 <script setup lang="ts">
-const groups  = [
+const groups = [
   {
     label: 'Hunter',
     options: [
       {
         label: 'HUmar',
-        value: 0
+        value: 0,
       },
       {
         label: 'HUnewearl',
-        value: 1
+        value: 1,
       },
       {
         label: 'HUcast',
-        value: 2
+        value: 2,
       },
       {
         label: 'HUcaseal',
-        value: 9
-      }
-    ]
+        value: 9,
+      },
+    ],
   },
   {
     label: 'Ranger',
     options: [
       {
         label: 'RAmar',
-        value: 3
+        value: 3,
       },
       {
         label: 'RAmarl',
-        value: 11
+        value: 11,
       },
       {
         label: 'RAcast',
-        value: 4
+        value: 4,
       },
       {
         label: 'RAcaseal',
-        value: 5
-      }
-    ]
+        value: 5,
+      },
+    ],
   },
   {
     label: 'Force',
     options: [
       {
         label: 'FOmar',
-        value: 10
+        value: 10,
       },
       {
         label: 'FOmarl',
-        value: 6
+        value: 6,
       },
       {
         label: 'FOnewm',
-        value: 7
+        value: 7,
       },
       {
         label: 'FOnewearl',
-        value: 8
-      }
-    ]
-  }
+        value: 8,
+      },
+    ],
+  },
 ]
 
 const model = defineModel()
