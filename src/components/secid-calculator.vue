@@ -1,4 +1,8 @@
 <template>
+    <img 
+        src="/src/assets/dev-id.webp" 
+        class="secid-calculator__logo"
+    />
     <div :class="['secid-calculator', spriteClassName]">
         <ClassSelector v-model.number="classModifier" />
         <input type="text" maxlength="10" v-model="charName" :disabled="!hasClassSelected" />
@@ -29,6 +33,11 @@ const spriteClassName = computed(() => {
 </script>
 
 <style lang="scss" scoped>
+.secid-calculator__logo {
+    width: 400px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
 .secid-calculator {
     display: flex;
     align-items: center;

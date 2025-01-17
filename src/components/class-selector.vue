@@ -12,6 +12,7 @@
           v-for="option in group.options"
           :key="group.label + option.label"
           :value="option.value"
+          :disabled="option.disabled ?? false"
         >
           {{ option.label }}
         </option>
@@ -23,64 +24,69 @@
 <script setup lang="ts">
 const groups = [
     {
-        label: 'Hunter',
+        label: 'Frontend dev',
         options: [
             {
-                label: 'HUmar',
+                label: 'Vue',
                 value: 0,
             },
             {
-                label: 'HUnewearl',
+                label: 'Angular',
                 value: 1,
             },
             {
-                label: 'HUcast',
+                label: 'Astro',
                 value: 2,
             },
             {
-                label: 'HUcaseal',
+                label: 'Svelte',
                 value: 9,
+            },
+            {
+                label: 'React',
+                value: 12,
+                disabled: true,
             },
         ],
     },
     {
-        label: 'Ranger',
+        label: 'Backend dev',
         options: [
             {
-                label: 'RAmar',
+                label: 'Express',
                 value: 3,
             },
             {
-                label: 'RAmarl',
+                label: 'Nest',
                 value: 11,
             },
             {
-                label: 'RAcast',
+                label: 'Adonis',
                 value: 4,
             },
             {
-                label: 'RAcaseal',
+                label: 'Meteor',
                 value: 5,
             },
         ],
     },
     {
-        label: 'Force',
+        label: 'Fullstack dev',
         options: [
             {
-                label: 'FOmar',
+                label: 'Next',
                 value: 10,
             },
             {
-                label: 'FOmarl',
+                label: 'Nuxt',
                 value: 6,
             },
             {
-                label: 'FOnewm',
+                label: 'Sails',
                 value: 7,
             },
             {
-                label: 'FOnewearl',
+                label: 'Remix',
                 value: 8,
             },
         ],
