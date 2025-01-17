@@ -8,13 +8,13 @@ The following commands are supported:
 
 ```fish
 # Install dependencies
-pnpm i
+npm i
 
 # Run a development environment locally
-pnpm dev
+npm run dev
 
 # Build the app for ptoduction
-pnpm build
+npm run build
 ````
 
 ## Try it
