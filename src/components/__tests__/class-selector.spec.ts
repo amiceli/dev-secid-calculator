@@ -20,7 +20,7 @@ describe('class-selector.vue', () => {
         })
         const options = wrapper.findAll('option')
 
-        expect(options.length).toBe(13)
+        expect(options.length).toBe(14)
     })
 
     it('should update the model value when an option is selected', async () => {
