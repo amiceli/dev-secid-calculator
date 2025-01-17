@@ -1,0 +1,11 @@
+---
+pre-commit:
+  commands:
+    check:
+      glob: "*.{ts,vue}"
+      run: npm run lint {staged_files}
+
+pre-push:
+  commands:
+    test:
+      run: npm run test
