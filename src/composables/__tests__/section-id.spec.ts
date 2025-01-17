@@ -1,36 +1,49 @@
+import { ref } from 'vue'
+import { describe, it, expect } from 'vitest'
 import { useSectionId } from '../section-id'
 
-const dataSet: [string, number, number, string][] = [
-  ['7', 0, 0, 'viridia'],
-  ['8', 0, 1, 'greenill'],
-  ['9', 0, 2, 'skyly'],
-  ['0', 0, 3, 'bluefull'],
-  ['1', 0, 4, 'purplenum'],
-  ['2', 0, 5, 'pinkal'],
-  ['3', 0, 6, 'redria'],
-  ['4', 0, 7, 'oran'],
-  ['5', 0, 8, 'yellowboze'],
-  ['6', 0, 9, 'whitill'],
-]
-
 describe('useSectionId', () => {
-  it('should return -1 as id and an empty string as name when charName is an empty string', () => {
-    const result = useSectionId('', -1, true)
+  it('should return correct section ID and name for given character name and class modifier', () => {
+    const charName = ref('TestName')
+    const classModifier = ref(3)
+    const isBlueBurst = ref(true)
 
-    expect(result.idValue.value).toBe(-1)
-    expect(result.idName.value).toBe('')
+    const { idValue, idName } = useSectionId(charName, classModifier, isBlueBurst)
+
+    expect(idValue.value).toBe(9)
+    expect(idName.value).toBe('whitill')
   })
 
-  describe('Blue Burst modifier is on', () => {
-    for (let i = 0; i < dataSet.length; i += 1) {
-      const [charName, classModifier, idValue, idName] = dataSet[i]
+  it('should return -1 and empty name when character name is empty', () => {
+    const charName = ref('')
+    const classModifier = ref(3)
+    const isBlueBurst = ref(true)
 
-      it(`should return ${idValue} as id and ${idName} as name when charName is ${charName} and class modifier is ${classModifier}`, () => {
-        const result = useSectionId(charName, classModifier, true)
+    const { idValue, idName } = useSectionId(charName, classModifier, isBlueBurst)
 
-        expect(result.idValue.value).toBe(idValue)
-        expect(result.idName.value).toBe(idName)
-      })
-    }
+    expect(idValue.value).toBe(-1)
+    expect(idName.value).toBe('')
+  })
+
+  it('should use default class modifier when isBlueBurst is false', () => {
+    const charName = ref('TestName')
+    const classModifier = ref(3)
+    const isBlueBurst = ref(false)
+
+    const { idValue, idName } = useSectionId(charName, classModifier, isBlueBurst)
+
+    expect(idValue.value).toBe(1)
+    expect(idName.value).toBe('greenill')
+  })
+
+  it('should handle special characters correctly', () => {
+    const charName = ref('ĀTest')
+    const classModifier = ref(3)
+    const isBlueBurst = ref(true)
+
+    const { idValue, idName } = useSectionId(charName, classModifier, isBlueBurst)
+
+    expect(idValue.value).toBe(5)
+    expect(idName.value).toBe('pinkal')
   })
 })
