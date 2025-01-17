@@ -29,8 +29,8 @@ const hasClassSelected = computed(() => classModifier.value !== -1)
 const { idName } = useSectionId(charName, classModifier, isBlueBurst)
 
 const spriteClassName = computed(() => {
-  const { value } = idName
-  return value === '' ? value : `append-badge-${value}-icon`
+    const { value } = idName
+    return value === '' ? value : `append-badge-${value}-icon`
 })
 </script>
 

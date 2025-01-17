@@ -26,6 +26,7 @@
     "formatter": {
       "quoteStyle": "single",
       "lineWidth": 140,
+      "indentWidth": 4,
       "semicolons": "asNeeded"
     }
   }

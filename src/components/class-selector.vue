@@ -22,69 +22,69 @@
 
 <script setup lang="ts">
 const groups = [
-  {
-    label: 'Hunter',
-    options: [
-      {
-        label: 'HUmar',
-        value: 0,
-      },
-      {
-        label: 'HUnewearl',
-        value: 1,
-      },
-      {
-        label: 'HUcast',
-        value: 2,
-      },
-      {
-        label: 'HUcaseal',
-        value: 9,
-      },
-    ],
-  },
-  {
-    label: 'Ranger',
-    options: [
-      {
-        label: 'RAmar',
-        value: 3,
-      },
-      {
-        label: 'RAmarl',
-        value: 11,
-      },
-      {
-        label: 'RAcast',
-        value: 4,
-      },
-      {
-        label: 'RAcaseal',
-        value: 5,
-      },
-    ],
-  },
-  {
-    label: 'Force',
-    options: [
-      {
-        label: 'FOmar',
-        value: 10,
-      },
-      {
-        label: 'FOmarl',
-        value: 6,
-      },
-      {
-        label: 'FOnewm',
-        value: 7,
-      },
-      {
-        label: 'FOnewearl',
-        value: 8,
-      },
-    ],
-  },
+    {
+        label: 'Hunter',
+        options: [
+            {
+                label: 'HUmar',
+                value: 0,
+            },
+            {
+                label: 'HUnewearl',
+                value: 1,
+            },
+            {
+                label: 'HUcast',
+                value: 2,
+            },
+            {
+                label: 'HUcaseal',
+                value: 9,
+            },
+        ],
+    },
+    {
+        label: 'Ranger',
+        options: [
+            {
+                label: 'RAmar',
+                value: 3,
+            },
+            {
+                label: 'RAmarl',
+                value: 11,
+            },
+            {
+                label: 'RAcast',
+                value: 4,
+            },
+            {
+                label: 'RAcaseal',
+                value: 5,
+            },
+        ],
+    },
+    {
+        label: 'Force',
+        options: [
+            {
+                label: 'FOmar',
+                value: 10,
+            },
+            {
+                label: 'FOmarl',
+                value: 6,
+            },
+            {
+                label: 'FOnewm',
+                value: 7,
+            },
+            {
+                label: 'FOnewearl',
+                value: 8,
+            },
+        ],
+    },
 ]
 
 const model = defineModel()
