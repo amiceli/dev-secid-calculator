@@ -1,6 +1,6 @@
-# Phantasy Star Online Section ID Calculator
+# ~~Phantasy Star~~ Dev Online Section ID Calculator
 
-A section ID calculator that works for all versions of Phantasy Star Online.
+A section ID calculator that works for all versions of ~~Phantasy~~ Dev Star Online.
 
 ## Installation
 
@@ -19,4 +19,4 @@ npm run build
 
 ## Try it
 
-You can try the app on [its dedicated GitHub Page](https://timbeard.github.io/secid-calculator/)
+You can try the app on [its dedicated GitHub Page](https://amiceli.github.io/dev-secid-calculator/)
