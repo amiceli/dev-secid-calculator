@@ -1,19 +1,13 @@
 <template>
-  <div :class="['secid-calculator', spriteClassName]">
-    <ClassSelector v-model.number="classModifier" />
+    <div :class="['secid-calculator', spriteClassName]">
+        <ClassSelector v-model.number="classModifier" />
+        <input type="text" maxlength="10" v-model="charName" :disabled="!hasClassSelected" />
+    </div>
 
-    <input
-      type="text"
-      maxlength="10"
-      v-model="charName"
-      :disabled="!hasClassSelected"
-    />
-  </div>
-
-  <label>
-    <input type="checkbox" v-model="isBlueBurst" />
-    <span>Blue Burst</span>
-  </label>
+    <label>
+        <input type="checkbox" v-model="isBlueBurst" />
+        <span>Blue Burst</span>
+    </label>
 </template>
 
 <script setup lang="ts">
@@ -36,50 +30,50 @@ const spriteClassName = computed(() => {
 
 <style lang="scss" scoped>
 .secid-calculator {
-  display: flex;
-  align-items: center;
-  position: relative;
-  padding: 6px;
-  border-radius: 20px;
-  border: 2px solid currentColor;
-  margin-bottom: 8px;
-  box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 6px;
+    border-radius: 20px;
+    border: 2px solid currentColor;
+    margin-bottom: 8px;
+    box-sizing: border-box;
 
-  input {
-    appearance: none;
-    border: none;
-    border-radius: 0;
-    font-size: 16px;
-    line-height: 2;
-    border-left: 1px solid currentColor;
-    padding: 0 12px;
-    margin-left: 12px;
-    background-color: transparent;
+    input {
+        appearance: none;
+        border: none;
+        border-radius: 0;
+        font-size: 16px;
+        line-height: 2;
+        border-left: 1px solid currentColor;
+        padding: 0 12px;
+        margin-left: 12px;
+        background-color: transparent;
 
-    &:disabled {
-      background-color: transparent;
+        &:disabled {
+            background-color: transparent;
+        }
+
+        &:focus-visible {
+            outline: none;
+        }
     }
 
-    &:focus-visible {
-      outline: none;
+    &::after {
+        content: '';
+        display: block;
+        width: 32px;
+        height: 32px;
     }
-  }
-
-  &::after {
-    content: '';
-    display: block;
-    width: 32px;
-    height: 32px;
-  }
 }
 
 label {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
 
-  & > span {
-    user-select: none;
-  }
+    &>span {
+        user-select: none;
+    }
 }
 </style>

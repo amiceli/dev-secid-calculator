@@ -1,5 +1,5 @@
 <template>
-  <secid-calculator />
+    <secid-calculator />
 </template>
 
 <script setup lang="ts">
